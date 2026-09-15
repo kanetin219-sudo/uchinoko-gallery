@@ -1,0 +1,201 @@
+<title>うちの子再現　作品集</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+<style>
+/* 明るい生成りの世界観に固定（依頼どおり）。背景と文字色はすべてトークンから明示 */
+:root{
+  color-scheme:light;
+  --base:#F8F3EC; --paper:#FFFDF9; --wool:#EADCCB;
+  --ink:#3F332B; --sub:#72604F; --gold:#A88A58;
+  --note-ink:#8a3b31; --note-line:#c98e86; --note-bg:#fff7f4;
+  --mincho:"Shippori Mincho","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  --gothic:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--base);color:var(--ink);font-family:var(--gothic);font-size:16px;line-height:1.9;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;max-width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+p,figure{margin:0}
+h1,h2{font-family:var(--mincho);font-weight:600;letter-spacing:.08em;margin:0;text-wrap:balance}
+
+.page{max-width:720px;margin:0 auto;padding-inline:20px}
+
+/* 確認メモ */
+.draftbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;background:var(--note-bg);border-bottom:1px dashed var(--note-line);color:var(--note-ink);font-size:12px;line-height:1.6;padding:6px 16px}
+.draftbar button{font:500 12px var(--gothic);color:var(--note-ink);background:var(--paper);border:1px solid var(--note-line);border-radius:999px;padding:4px 12px;min-height:32px;cursor:pointer}
+.draftbar[hidden]{display:none}
+
+/* 見出し */
+.masthead{padding-block:40px 32px;display:grid;gap:18px}
+.brand{font-family:var(--mincho);font-size:14px;letter-spacing:.14em;line-height:1.6;color:var(--sub)}
+.masthead h1{font-size:34px;line-height:1.4}
+.masthead p{color:var(--sub);font-size:15px;max-width:30em}
+.index{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.index a{display:inline-block;font-size:13px;line-height:1;padding:9px 14px;border:1px solid var(--wool);border-radius:999px;background:var(--paper);text-decoration:none;color:var(--ink)}
+.index a:hover{border-color:var(--gold)}
+
+/* 作品 */
+.work{padding-block:56px;border-top:1px solid var(--wool);display:grid;gap:14px;scroll-margin-top:48px}
+.work-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.work h2{font-size:22px;line-height:1.5}
+.en{font-family:var(--mincho);font-size:11px;letter-spacing:.22em;color:var(--gold)}
+.note{font-size:14px;color:var(--sub);line-height:1.8}
+.shot{overflow:hidden;background:var(--wool);border-radius:3px}
+.bleed{margin-inline:-20px;border-radius:0}
+.r45{aspect-ratio:4/5}.r32{aspect-ratio:3/2}.r11{aspect-ratio:1/1}.r34{aspect-ratio:3/4}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lead-side{display:grid;grid-template-columns:3fr 2fr;gap:8px;align-items:end}
+.lead-side .stack{display:grid;gap:8px}
+.inset{width:78%;margin-left:auto}
+.zoom{cursor:zoom-in}
+.clip{position:relative}
+.clip video{display:block;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:10px;top:10px;font-size:11px;line-height:1;letter-spacing:.12em;padding:5px 9px;border-radius:999px;background:rgba(255,253,249,.88);color:var(--ink)}
+
+footer{margin-top:24px;padding:40px 20px 56px;border-top:1px solid var(--wool);font-size:12px;color:var(--sub);text-align:center;line-height:1.9}
+
+dialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh}
+dialog::backdrop{background:rgba(40,32,26,.9)}
+dialog img{max-width:94vw;max-height:88vh;width:auto;height:auto;margin:auto;border-radius:3px;object-fit:contain}
+dialog button{position:fixed;top:12px;right:12px;width:48px;height:48px;border:0;border-radius:50%;background:var(--paper);color:var(--ink);font-size:22px;cursor:pointer}
+
+@media (min-width:760px){
+  .masthead{padding-block:72px 48px}
+  .masthead h1{font-size:44px}
+  .bleed{margin-inline:0;border-radius:3px}
+  .work{padding-block:80px}
+}
+</style>
+
+<div class="draftbar" id="draftbar"><span>試作版：犬種・作品名の表記と、写真の掲載可否を確認してください</span><button type="button" id="hide-draftbar">閉じる</button></div>
+
+<div class="page">
+  <header class="masthead">
+    <span class="brand">うちの子再現アーティスト養成講座</span>
+    <h1>作品集</h1>
+    <p>ここに並んでいるのは、すべて羊毛フェルトの作品です。一枚の写真をもとに、表情や毛並み、模様まで一針ずつ形にしています。</p>
+    <nav aria-label="作品の一覧">
+      <ul class="index">
+        <li><a href="#shihtzu">シーズー</a></li>
+        <li><a href="#poodle">トイプードル</a></li>
+        <li><a href="#collie">ボーダーコリー</a></li>
+        <li><a href="#cavalier">キャバリア</a></li>
+        <li><a href="#dachshund">ダックスフンド</a></li>
+        <li><a href="#frenchie">フレンチブルドッグ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="work" id="shihtzu">
+      <div class="work-head"><h2>シーズー</h2><span class="en">SHIH TZU</span></div>
+      <div class="pair">
+        <figure class="shot r34 zoom"><img src="img/work-shihtzu-front.jpg" alt="羊毛フェルトのシーズーを正面から" fetchpriority="high" style="object-position:45% 65%"></figure>
+        <figure class="shot r34 zoom"><img src="img/detail-back.jpg" alt="シーズーの作品の後ろ姿と、背中の模様" loading="lazy" style="object-position:50% 60%"></figure>
+      </div>
+      <div class="pair">
+        <figure class="shot r34 clip "><video src="img/clip-shihtzu-garden.mp4" poster="img/clip-shihtzu-garden-poster.jpg" muted loop playsinline preload="none" aria-label="外のマットの上に立つ、羊毛フェルトのシーズーの動画" style="object-position:50% 50%"></video><span class="tag">動画</span></figure>
+        <figure class="shot r34 clip "><video src="img/clip-shihtzu-sofa.mp4" poster="img/clip-shihtzu-sofa-poster.jpg" muted loop playsinline preload="none" aria-label="ソファの上に座る、羊毛フェルトのシーズーの全身を横から撮った動画" style="object-position:50% 62%"></video><span class="tag">動画</span></figure>
+      </div>
+      <p class="note">前から見ても、後ろから見ても。背中の模様まで。</p>
+      <div class="pair" style="margin-top:18px">
+        <figure class="shot r34 clip"><video src="img/clip-shihtzu-mother.mp4" poster="img/clip-shihtzu-mother-poster.jpg" muted loop playsinline preload="none" aria-label="届いたシーズーの作品の頭を、ご家族が手で撫でている動画" style="object-position:50% 60%"></video><span class="tag">動画</span></figure>
+        <figure class="shot r34 clip"><video src="img/clip-shihtzu-father.mp4" poster="img/clip-shihtzu-father-poster.jpg" muted loop playsinline preload="none" aria-label="届いたシーズーの作品に、ご家族が手を伸ばして撫でている動画" style="object-position:50% 45%"></video><span class="tag">動画</span></figure>
+      </div>
+      <p class="note">届いた日に、ご家族がよしよし。</p>
+    </article>
+    <article class="work" id="poodle">
+      <div class="work-head"><h2>トイプードル</h2><span class="en">TOY POODLE</span></div>
+      <figure class="shot r45 bleed zoom"><img src="img/hero-poodle.jpg" alt="羊毛フェルトのグレーのトイプードル。座って上を見上げている" loading="lazy"></figure>
+      <div class="pair">
+        <figure class="shot r11 zoom"><img src="img/detail-eyes.jpg" alt="トイプードルの作品の目元のアップ" loading="lazy"></figure>
+        <figure class="shot r11 zoom"><img src="img/work-poodle-face.jpg" alt="トイプードルの作品の顔を斜めから" loading="lazy" style="object-position:55% 40%"></figure>
+      </div>
+      <figure class="shot r45 clip inset"><video src="img/clip-poodle.mp4" poster="img/clip-poodle-poster.jpg" muted loop playsinline preload="none" aria-label="羊毛フェルトのトイプードルを、カメラを動かしながら撮影した動画" style="object-position:50% 50%"></video><span class="tag">動画</span></figure>
+      <p class="note">グレーの巻き毛と、見上げる目元。</p>
+    </article>
+
+    <article class="work" id="collie">
+      <div class="work-head"><h2>ボーダーコリー</h2><span class="en">BORDER COLLIE</span></div>
+      <div class="lead-side">
+        <figure class="shot r34 zoom"><img src="img/work-collie.jpg" alt="羊毛フェルトのボーダーコリー。座って口を開けている" loading="lazy"></figure>
+        <div class="stack">
+          <figure class="shot r11 zoom"><img src="img/detail-mouth.jpg" alt="ボーダーコリーの作品の口元のアップ" loading="lazy" style="object-position:48% 45%"></figure>
+        </div>
+      </div>
+      <p class="note">白黒の長い毛と、笑った口元の歯や舌まで。</p>
+    </article>
+
+    <article class="work" id="cavalier">
+      <div class="work-head"><h2>キャバリア</h2><span class="en">CAVALIER</span></div>
+      <figure class="shot r32 bleed zoom"><img src="img/detail-ears.jpg" alt="キャバリアの作品の、巻き毛の耳のアップ" loading="lazy" style="object-position:45% 50%"></figure>
+      <div class="pair">
+        <figure class="shot r34 zoom"><img src="img/work-cavalier.jpg" alt="羊毛フェルトのキャバリア。立ち姿" loading="lazy"></figure>
+        <figure class="shot r34 clip "><video src="img/clip-cavalier.mp4" poster="img/clip-cavalier-poster.jpg" muted loop playsinline preload="none" aria-label="羊毛フェルトのキャバリアが台の上に立っている動画" style="object-position:50% 50%"></video><span class="tag">動画</span></figure>
+      </div>
+      <p class="note">くるんと巻いた耳の毛と、白とオレンジの模様。</p>
+    </article>
+
+    <article class="work" id="dachshund">
+      <div class="work-head"><h2>ダックスフンド</h2><span class="en">DACHSHUND</span></div>
+      <figure class="shot r32 bleed zoom"><img src="img/studio-dachs-poodle.jpg" alt="羊毛フェルトのブラックタンのダックスフンドと、グレーのトイプードル" loading="lazy"></figure>
+      <div class="pair">
+        <figure class="shot r11 zoom"><img src="img/detail-paws.jpg" alt="ダックスフンドの作品の顔と前足" loading="lazy" style="object-position:22% 60%"></figure>
+        <figure class="shot r11 zoom"><img src="img/studio-three.jpg" alt="羊毛フェルトのレッドのダックスフンド" loading="lazy" style="object-position:18% 55%"></figure>
+      </div>
+      <figure class="shot r45 clip inset"><video src="img/clip-dachshund.mp4" poster="img/clip-dachshund-poster.jpg" muted loop playsinline preload="none" aria-label="椅子の上に伏せている、羊毛フェルトのダックスフンドの動画" style="object-position:50% 50%"></video><span class="tag">動画</span></figure>
+      <p class="note">ブラックタンの前足の模様と、レッドの短い毛並み。</p>
+    </article>
+
+    <article class="work" id="frenchie">
+      <div class="work-head"><h2>フレンチブルドッグ</h2><span class="en">FRENCH BULLDOG</span></div>
+      <div class="pair">
+        <figure class="shot r34 zoom"><img src="img/detail-brindle.jpg" alt="羊毛フェルトのフレンチブルドッグ。ブリンドルの毛並み" loading="lazy" style="object-position:50% 30%"></figure>
+        <figure class="shot r34 clip"><video src="img/clip-frenchie-home.mp4" poster="img/clip-frenchie-home-poster.jpg" muted loop playsinline preload="none" aria-label="お家のベッドの上に座る、フレンチブルドッグの作品に近づいていく動画" style="object-position:70% 70%"></video><span class="tag">動画</span></figure>
+      </div>
+      <p class="note">何色も混ぜて表現したブリンドルの毛並み。右はお家に届いた日の様子。</p>
+    </article>
+
+
+
+    <article class="work" aria-label="作品が並んだ写真">
+      <figure class="shot r32 bleed zoom"><img src="img/studio-cav-collie.jpg" alt="キャバリアとボーダーコリーの作品が並んでいる" loading="lazy" style="object-position:40% 50%"></figure>
+    </article>
+  </main>
+</div>
+
+<footer>
+  ※掲載している作品は、すべて羊毛フェルトで制作したものです。<br>
+  写真をタップすると大きく表示されます。
+</footer>
+
+<dialog id="zoom"><button type="button" id="zoom-close" aria-label="閉じる">×</button><img alt=""></dialog>
+
+<script>
+(function(){
+  document.getElementById('hide-draftbar').addEventListener('click', function(){
+    document.getElementById('draftbar').hidden = true;
+  });
+
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var videos = document.querySelectorAll('.clip video');
+  if (still || !('IntersectionObserver' in window)) {
+    videos.forEach(function(v){ v.controls = true; });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.play().catch(function(){ e.target.controls = true; }); } else { e.target.pause(); } });
+    }, {threshold:0.35});
+    videos.forEach(function(v){ io.observe(v); });
+  }
+
+  var dlg = document.getElementById('zoom'), big = dlg.querySelector('img');
+  if (!dlg.showModal) return;
+  document.querySelectorAll('.zoom img').forEach(function(img){
+    img.addEventListener('click', function(){ big.src = img.src; big.alt = img.alt; dlg.showModal(); });
+  });
+  dlg.addEventListener('click', function(){ dlg.close(); });
+})();
+</script>
