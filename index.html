@@ -23,10 +23,6 @@ h1,h2{font-family:var(--mincho);font-weight:600;letter-spacing:.08em;margin:0;te
 
 .page{max-width:720px;margin:0 auto;padding-inline:20px}
 
-/* 確認メモ */
-.draftbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;background:var(--note-bg);border-bottom:1px dashed var(--note-line);color:var(--note-ink);font-size:12px;line-height:1.6;padding:6px 16px}
-.draftbar button{font:500 12px var(--gothic);color:var(--note-ink);background:var(--paper);border:1px solid var(--note-line);border-radius:999px;padding:4px 12px;min-height:32px;cursor:pointer}
-.draftbar[hidden]{display:none}
 
 /* 見出し */
 .masthead{padding-block:40px 32px;display:grid;gap:18px}
@@ -70,7 +66,6 @@ dialog button{position:fixed;top:12px;right:12px;width:48px;height:48px;border:0
 }
 </style>
 
-<div class="draftbar" id="draftbar"><span>試作版：犬種・作品名の表記と、写真の掲載可否を確認してください</span><button type="button" id="hide-draftbar">閉じる</button></div>
 
 <div class="page">
   <header class="masthead">
@@ -176,10 +171,6 @@ dialog button{position:fixed;top:12px;right:12px;width:48px;height:48px;border:0
 
 <script>
 (function(){
-  document.getElementById('hide-draftbar').addEventListener('click', function(){
-    document.getElementById('draftbar').hidden = true;
-  });
-
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var videos = document.querySelectorAll('.clip video');
   if (still || !('IntersectionObserver' in window)) {
